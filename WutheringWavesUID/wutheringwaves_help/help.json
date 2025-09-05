@@ -481,6 +481,22 @@
         "need_ck": false,
         "need_sk": false,
         "need_admin": false
+      },
+      {
+        "name": "签到",
+        "desc": "鸣潮签到",
+        "eg": "签到",
+        "need_ck": true,
+        "need_sk": false,
+        "need_admin": false
+      },
+      {
+        "name": "开启自动签到",
+        "desc": "开启每天的自动签到功能",
+        "eg": "开启自动签到",
+        "need_ck": true,
+        "need_sk": false,
+        "need_admin": false
       }
     ]
   },
