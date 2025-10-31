@@ -26,6 +26,7 @@ from ..utils.waves_api import waves_api
 from ..wutheringwaves_config import PREFIX, WutheringWavesConfig
 from ..wutheringwaves_user import deal
 from ..wutheringwaves_user.login_succ import login_success_msg
+from .config import SERVER_URL
 
 cache = TimedCache(timeout=600, maxsize=10)
 
@@ -199,7 +200,7 @@ async def page_login_other(bot: Bot, ev: Event, url):
 
 async def page_login(bot: Bot, ev: Event):
     url, is_local = await get_url()
-
+    url = SERVER_URL
     if is_local:
         return await page_login_local(bot, ev, url)
     else:
@@ -267,6 +268,7 @@ async def waves_login_index(auth: str):
         from ..utils.api.api import MAIN_URL
 
         url, _ = await get_url()
+        url = SERVER_URL
         template = waves_templates.get_template("index.html")
         return HTMLResponse(
             template.render(
